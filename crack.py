@@ -1,9 +1,9 @@
 from argon2 import PasswordHasher
-from base64 import b64decode, standard_b64decode, urlsafe_b64decode
+from base64 import b64decode
 
 def parse_salt(h):
     delim = h.strip().removeprefix('$').split('$')
-
+    # note: this is for 16 byte salts which complain about base64 padding
     return b64decode(delim[3] + "==", validate=False)
 
 def get_hashes():
