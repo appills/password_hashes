@@ -41,4 +41,4 @@ for user in users:
 
 with open('hashes.txt', 'w') as fh:
     for user in users:
-        fh.write(user[0] + ',' + users[1] + '\n')
+        fh.write(user[0] + ',' + user[1] + '\n')
